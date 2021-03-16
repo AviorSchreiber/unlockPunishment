@@ -4,21 +4,22 @@ import time
 import sys
 import os
 
+def notify(title, text):
+    os.system("""
+              osascript -e 'display notification "{}" with title "{}" sound name "Submarine"'
+              """.format(text, title))
+
 if os.path.exists("/tmp/lockfile"):
     print("Already running, exiting...")
     sys.exit(0)
 
 os.system("touch /tmp/lockfile")
 
-time.sleep(2*60*60) #1 Hour for startup
-def notify(title, text):
-    os.system("""
-              osascript -e 'display notification "{}" with title "{}" sound name "Submarine"'
-              """.format(text, title))
 try:
+    # time.sleep(2*60*60) #1 Hour for startup
     while True:
-        notify("It-Security Awareness", "Dont Forget To lock your screen,When you play Snooker...")
-        time.sleep(random.randrange(0,10))
+        notify("It-Security Awareness", "Do not forget to lock your screen,When you going out of your position...")
+        time.sleep(random.randrange(0,300))
 except:
     print("Ending...")
     os.system("rm /tmp/lockfile")
