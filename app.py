@@ -2,9 +2,7 @@
 import random
 import time
 import sys
-
 import os
-
 
 if os.path.exists("/tmp/lockfile"):
     print("Already running, exiting...")
@@ -12,6 +10,7 @@ if os.path.exists("/tmp/lockfile"):
 
 os.system("touch /tmp/lockfile")
 
+time.sleep(2*60*60) #1 Hour for startup
 def notify(title, text):
     os.system("""
               osascript -e 'display notification "{}" with title "{}" sound name "Submarine"'
