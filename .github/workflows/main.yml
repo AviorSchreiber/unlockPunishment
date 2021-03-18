@@ -24,4 +24,4 @@ jobs:
       #   with:
       #    auto_increment_type: minor
       - name: echo branch from
-        run: echo ${{ github.event_name }} 
+        run: echo "${{ github.event_name }} GITHUB_REF:$GITHUB_REF"
