@@ -16,7 +16,7 @@ if os.path.exists("/tmp/lockfile"):
 os.system("touch /tmp/lockfile")
 
 try:
-    # time.sleep(2*60*60) #1 Hour for startup
+    time.sleep(2*60*60) #1 Hour for startup
     while True:
         notify("It-Security Awareness", "Do not forget to lock your screen,When you going out of your position...")
         time.sleep(random.randrange(0,300))
